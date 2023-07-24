@@ -11,8 +11,8 @@ app = Flask(__name__)
 def moves(name,pos,board):
     if name == "Queen":
         print('Queen Moves')
-        posX = ord(pos[0]) - 64
-        posY = ord(pos[1]) - 48
+        posX = 8 - (ord(pos[0]) - 64)
+        posY = 8 - (ord(pos[1]) - 48)
         for i in range(1,posY+1):
             if i!= posY:
                 board[posX][i] = 1
@@ -51,8 +51,8 @@ def moves(name,pos,board):
 
     elif name == "Bishop":
         print('Bishop Moves')
-        posX = ord(pos[0]) - 64
-        posY = ord(pos[1]) - 48
+        posX = 8 - (ord(pos[0]) - 64)
+        posY = 8 - (ord(pos[1]) - 48)
         moving_pos_x = posX
         moving_pos_y = posY
         while moving_pos_x > 1 and moving_pos_y > 1:
@@ -84,8 +84,8 @@ def moves(name,pos,board):
 
     elif name == "Rook":
         print("Rook moves")
-        posX = ord(pos[0]) - 64
-        posY = ord(pos[1]) - 48
+        posX = 8 - (ord(pos[0]) - 64)
+        posY = 8 - (ord(pos[1]) - 48)
         for i in range(1,posY+1):
             if i!= posY:
                 board[posX][i] = 1
@@ -95,8 +95,8 @@ def moves(name,pos,board):
 
     else:
         print("Kinght moves")
-        posX = ord(pos[0]) - 64
-        posY = ord(pos[1]) - 48
+        posX = 8 - (ord(pos[0]) - 64)
+        posY = 8 - (ord(pos[1]) - 48)
         currPosX = posX+2
         currPosY = posY+1
         if currPosX >= 1 and currPosY >= 1 and currPosX <9 and currPosY <9:
@@ -119,8 +119,8 @@ def result(name, pos, board):
     print(name, " " ,pos)
     valid_moves = []
     if name == 'Queen' :
-        posX = ord(pos[0]) - 64
-        posY = ord(pos[1]) - 48
+        posX = 8 - (ord(pos[0]) - 64)
+        posY = 8 - (ord(pos[1]) - 48)
         for i in range(1,posY+1):
             if i!= posY and board[posX][i] == 0:
                 valid_moves.append(Mapper[posX]+""+str(i))
@@ -165,8 +165,8 @@ def result(name, pos, board):
 
 
     elif name == "Bishop":
-        posX = ord(pos[0]) - 64
-        posY = ord(pos[1]) - 48
+        posX = 8 - (ord(pos[0]) - 64)
+        posY = 8 - (ord(pos[1]) - 48)
 
         moving_pos_x = posX
         moving_pos_y = posY
@@ -217,8 +217,8 @@ def result(name, pos, board):
 
     elif name == "Rook":
 
-        posX = ord(pos[0]) - 64
-        posY = ord(pos[1]) - 48
+        posX = 8 - (ord(pos[0]) - 64)
+        posY = 8 - (ord(pos[1]) - 48)
         for i in range(1,posY+1):
             if i!= posY and board[posX][i] == 0:
                 valid_moves.append(Mapper[posX]+""+str(i))
